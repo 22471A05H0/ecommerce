@@ -1,0 +1,123 @@
+/* Home container with background image and center alignment */
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('/images/hero-banner.jpg') center/cover no-repeat;
+  padding: clamp(1rem, 5vw, 3rem);
+  box-sizing: border-box;
+  padding-left: 320px;
+}
+
+/* Overlay with semi-transparent dark gradient */
+.home-overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75));
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  max-width: 90%;
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Title styling */
+.home-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.brand-name {
+  color: #ff6347;
+  font-style: italic;
+}
+
+/* Subtitle */
+.home-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  margin-bottom: 20px;
+  color: #ffd700;
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+/* Description text */
+.home-description {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 35px;
+  animation: fadeIn 1.6s ease-in-out;
+  padding: 0 1rem;
+}
+
+/* Button wrapper */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Common button styles */
+.home-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.9s ease-in-out;
+  display: inline-block;
+}
+
+/* Veg button */
+.home-button.green {
+  background-color: #28a745;
+  color: white;
+}
+.home-button.green:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Non-Veg button */
+.home-button.red {
+  background-color: #dc3545;
+  color: white;
+}
+.home-button.red:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive media query tweaks (optional for older browsers) */
+@media (max-width: 768px) {
+  .home-overlay {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .home-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-button {
+    width: 80%;
+    max-width: 300px;
+  }
+}
